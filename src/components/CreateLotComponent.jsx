@@ -12,7 +12,8 @@ class CreateLotComponent extends Component {
             lotID: '',
             shipDate: '',
             totalCount: '',
-            maleCount: ''
+            maleCount: '',
+            rancherId: ''
         }
         this.changeLotIDHandler = this.changeLotIDHandler.bind(this);
         this.changeShipDateHandler = this.changeShipDateHandler.bind(this);
@@ -43,6 +44,7 @@ class CreateLotComponent extends Component {
                         totalCount: lot.totalCount,
                         maleCount: lot.maleCount,
                         femaleCount: lot.femaleCount,
+                        rancherId: lot.rancherId,
                     });
                 });
             }
@@ -50,7 +52,7 @@ class CreateLotComponent extends Component {
 
         saveOrUpdateLot = (e) => {
             e.preventDefault();
-            let lot = { lotID: this.state.lotID, shipDate: this.state.shipDate, totalCount: this.state.totalCount, maleCount: this.state.maleCount, femaleCount: this.state.femaleCount};
+            let lot = { lotID: this.state.lotID, shipDate: this.state.shipDate, totalCount: this.state.totalCount, maleCount: this.state.maleCount, femaleCount: this.state.femaleCount, rancherId: this.state.rancherId};
             console.log('lot => ' + JSON.stringify(lot));
     
             //if (this.state.id == -1) {
@@ -80,6 +82,10 @@ class CreateLotComponent extends Component {
         }
         changeFemaleCountHandler = (event) => {
             this.setState({ femaleCount: event.target.value });
+        }
+
+        changeRancherIdHandler = (event) => {
+            this.setState({ rancherId: event.target.value });
         }
 
         cancel() {
@@ -133,6 +139,11 @@ class CreateLotComponent extends Component {
                                         <label>Female Count:</label>
                                         <input placeholder="Female Count" name="femaleCount" className="form-control"
                                             value={this.state.femaleCount} onChange={this.changeFemaleCountHandler} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Rancher Id:</label>
+                                        <input placeholder="Rancher Id" name="rancherId" className="form-control"
+                                            value={this.state.rancherId} onChange={this.changeRancherIdHandler} />
                                     </div>
 
                                     <button style={{marginTop:"10px"}}className="btn btn-success" onClick={this.saveOrUpdateLot}>Save</button>

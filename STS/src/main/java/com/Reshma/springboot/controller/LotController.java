@@ -64,6 +64,8 @@ import com.Reshma.springboot.exception.ResourceNotFoundException;
 			lot.setTotalCount(lotDetails.getTotalCount());
 			lot.setMaleCount(lotDetails.getMaleCount());
 			lot.setFemaleCount(lotDetails.getFemaleCount());
+			lot.setRancherId(lotDetails.getRancherId());
+			
 					
 			Lot updatedLot = lotRepository.save(lot);
 					return ResponseEntity.ok(updatedLot);

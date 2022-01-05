@@ -11,7 +11,8 @@ class CreateRancherComponent extends Component {
             contactNum:'',
             firstName: '',
             lastName: '',
-            emailId: ''
+            emailId: '',
+            rancherId: ''
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -40,7 +41,8 @@ class CreateRancherComponent extends Component {
                         firstName: rancher.firstName,
                         lastName: rancher.lastName,
                         emailId: rancher.emailId,
-                        contactNum: rancher.contactNum
+                        contactNum: rancher.contactNum,
+                        rancherId : rancher.rancherId
                     });
                 });
             }
@@ -48,7 +50,7 @@ class CreateRancherComponent extends Component {
 
         saveOrUpdateRancher = (e) => {
             e.preventDefault();
-            let rancher = { firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, contactNum: this.state.contactNum};
+            let rancher = { firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, contactNum: this.state.contactNum, rancherId: this.state.rancherId};
             console.log('rancher => ' + JSON.stringify(rancher));
     
             //if (this.state.id == -1) {
@@ -75,6 +77,10 @@ class CreateRancherComponent extends Component {
         }
         changeContactNumHandler = (event) => {
             this.setState({ contactNum: event.target.value });
+        }
+
+        changeRancherIdHandler = (event) => {
+            this.setState({ rancherId: event.target.value });
         }
 
         cancel() {
@@ -123,6 +129,11 @@ class CreateRancherComponent extends Component {
                                         <label>Contact Number:</label>
                                         <input placeholder="Contact Num" name="contactNum" className="form-control"
                                             value={this.state.contactNum} onChange={this.changeContactNumHandler} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Rancher Id:</label>
+                                        <input placeholder="Rancher Id" name="rancherId" className="form-control"
+                                            value={this.state.rancherId} onChange={this.changeRancherIdHandler} />
                                     </div>
 
                                     <button style={{marginTop:"10px"}}className="btn btn-success" onClick={this.saveOrUpdateRancher}>Save</button>

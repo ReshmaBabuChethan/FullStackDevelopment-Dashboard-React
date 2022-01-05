@@ -51,6 +51,13 @@ class ListCattleComponent extends Component {
         this.props.history.push('/add-Cattle/_add');
         
     }
+
+    back(){
+        //going back to welcome
+               this.props.history.push('/');
+            }
+
+            
     render() {
         return (
             <div>
@@ -85,17 +92,15 @@ class ListCattleComponent extends Component {
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.deleteCattle(cattle.id)} className="btn btn-danger">Delete</button>
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.viewCattle(cattle.id)} className="btn btn-info">View</button>
                                     </td>
-                                    {/*<td>
-                                        <button onClick = { () => this.editEmployee(employee.id)} className="btn btn-info">Update</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.viewEmployee(employee.id)} className="btn btn-info">View</button>
-                                    </td>*/}
+                                   
                                     </tr>
                                 )
                             }
                         </tbody>
                     </table>
+                    
                 </div>
+                <button style={{marginLeft: "10px"}} className="addBackStyle"  onClick={this.back.bind(this)}>Back</button>
                 </div>
 
             

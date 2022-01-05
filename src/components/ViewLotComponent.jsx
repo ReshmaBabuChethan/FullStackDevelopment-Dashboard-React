@@ -18,6 +18,12 @@ class ViewLotComponent extends Component {
               })
     }
 
+    back(){
+        //moving back to lots list
+               this.props.history.push('/lots');
+            }
+
+
     render() {
         return (
             <div>
@@ -44,9 +50,14 @@ class ViewLotComponent extends Component {
                          <label> Female Count in Lot:</label>
                         <div> {this.state.lot.femaleCount} </div>
                      </div>
+                     <div className="row">
+                         <label> Rancher ID of this lot:</label>
+                        <div> {this.state.lot.rancherId} </div>
+                     </div>
                  </div>
-                </div>
                
+                </div>
+                <button style={{marginTop:"10px", marginLeft: "10px"}} className="addBackStyle" onClick={this.back.bind(this)}>Back</button>
             </div>
         );
     }

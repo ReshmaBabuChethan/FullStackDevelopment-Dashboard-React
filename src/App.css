@@ -3,8 +3,8 @@
 }
 
 .App-logo {
-  height: 60vmin;
-  width:20vmin;
+  height: 0vmin;
+  width:2vmin;
   pointer-events: none;
 }
 
@@ -23,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
  
 }
 
@@ -31,14 +32,7 @@
   color: #61dafb;
 }
 
-/*@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}*/
+
 
 
 .footer {
@@ -55,17 +49,24 @@
 .welcomeBtn{
   color:black;
   background-color:lightskyblue;
-  /*min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(5px + 2vmin);*/
+ 
 }
 
 
 .addRancherStyle {
   background-color:royalblue;
+  min-height: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+ 
+}
+
+.addBackStyle {
+  background-color:darkcyan;
   min-height: 2vh;
   display: flex;
   flex-direction: column;

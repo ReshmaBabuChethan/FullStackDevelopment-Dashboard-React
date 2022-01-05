@@ -61,6 +61,7 @@ import com.Reshma.springboot.exception.ResourceNotFoundException;
 			rancher.setLastName(rancherDetails.getLastName());
 			rancher.setEmailId(rancherDetails.getEmailId());
 			rancher.setContactNum(rancherDetails.getContactNum());
+			rancher.setRancherId(rancherDetails.getRancherId());
 					
 					Rancher updatedRancher = rancherRepository.save(rancher);
 					return ResponseEntity.ok(updatedRancher);

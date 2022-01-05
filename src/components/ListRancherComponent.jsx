@@ -51,6 +51,12 @@ class ListRancherComponent extends Component {
         this.props.history.push('/add-Rancher/_add');
         
     }
+
+    back(){
+        //going back to welcome
+               this.props.history.push('/');
+            }
+        
     render() {
         return (
             <div>
@@ -67,6 +73,7 @@ class ListRancherComponent extends Component {
                                 <th>Last Name</th>
                                 <th>Email Id</th>
                                 <th>Contact number</th>
+                                <th>Rancher ID</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -79,23 +86,22 @@ class ListRancherComponent extends Component {
                                     <td> {rancher.lastName}</td>
                                     <td> {rancher.emailId}</td>
                                     <td> {rancher.contactNum}</td>
+                                    <td> {rancher.rancherId}</td>
                                     <td>
                                        {/* <button  className="btn btn-info">Update</button>*/}
                                        <button onClick = { () => this.editRancher(rancher.id)} className="btn btn-info">Update</button>
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.deleteRancher(rancher.id)} className="btn btn-danger">Delete</button>
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.viewRancher(rancher.id)} className="btn btn-info">View</button>
                                     </td>
-                                    {/*<td>
-                                        <button onClick = { () => this.editEmployee(employee.id)} className="btn btn-info">Update</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.viewEmployee(employee.id)} className="btn btn-info">View</button>
-                                    </td>*/}
+                                    
                                     </tr>
                                 )
                             }
                         </tbody>
                     </table>
+                
                 </div>
+                <button style={{marginLeft: "10px"}} className="addBackStyle"  onClick={this.back.bind(this)}>Back</button>
                 </div>
 
             

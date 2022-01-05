@@ -17,6 +17,10 @@ class ViewRancherComponent extends Component {
          this.setState({rancher: res.data});
               })
     }
+    back(){
+        //moving back to ranchers list
+               this.props.history.push('/ranchers');
+            }
 
     render() {
         return (
@@ -40,9 +44,14 @@ class ViewRancherComponent extends Component {
                          <label> Rancher Contact Number:</label>
                         <div> {this.state.rancher.contactNum} </div>
                      </div>
+                     <div className="row">
+                         <label> Rancher ID:</label>
+                        <div> {this.state.rancher.rancherId} </div>
+                     </div>
                  </div>
+                 
                 </div>
-               
+                <button style={{marginTop:"10px", marginLeft: "10px"}} className="addBackStyle" onClick={this.back.bind(this)}>Back</button>
             </div>
         );
     }

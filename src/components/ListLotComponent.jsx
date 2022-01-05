@@ -51,6 +51,12 @@ class ListLotComponent extends Component {
         this.props.history.push('/add-Lot/_add');
         
     }
+
+    back(){
+        //going back to welcome
+               this.props.history.push('/');
+            }
+            
     render() {
         return (
             <div>
@@ -68,6 +74,7 @@ class ListLotComponent extends Component {
                                 <th>Total Count</th>
                                 <th>Male</th>
                                 <th>Female</th>
+                                <th>RancherId</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -81,23 +88,22 @@ class ListLotComponent extends Component {
                                     <td> {lot.totalCount}</td>
                                     <td> {lot.maleCount}</td>
                                     <td> {lot.femaleCount}</td>
+                                    <td> {lot.rancherId}</td>
                                     <td>
                                        {/* <button  className="btn btn-info">Update</button>*/}
                                        <button onClick = { () => this.editLot(lot.id)} className="btn btn-info">Update</button>
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.deleteLot(lot.id)} className="btn btn-danger">Delete</button>
                                         <button style={{marginLeft:"10px"}} onClick = { () => this.viewLot(lot.id)} className="btn btn-info">View</button>
                                     </td>
-                                    {/*<td>
-                                        <button onClick = { () => this.editEmployee(employee.id)} className="btn btn-info">Update</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
-                                        <button style={{marginLeft:"10px"}} onClick = { () => this.viewEmployee(employee.id)} className="btn btn-info">View</button>
-                                    </td>*/}
+                                    
                                     </tr>
                                 )
                             }
                         </tbody>
                     </table>
+                    
                 </div>
+                <button style={{marginLeft: "10px"}} className="addBackStyle"  onClick={this.back.bind(this)}>Back</button>
                 </div>
 
             

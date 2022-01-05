@@ -28,6 +28,9 @@ public class Rancher {
 	  
 	  @Column(name="contact_num")
     private String contactNum;
+	  
+	  @Column(name="rid")
+	    private int rancherId;
 
 
 	//constructors
@@ -35,12 +38,13 @@ public class Rancher {
     	   
        }
        
-	public Rancher(String firstName, String lastName, String emailId, String contactNum) {
+	public Rancher(String firstName, String lastName, String emailId, String contactNum, int rancherId) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
 		this.contactNum= contactNum;
+		this.rancherId=rancherId;
 	}
 	//setters and getters
 	public long getId() {
@@ -72,6 +76,12 @@ public class Rancher {
 	}
 	public void setContactNum(String contactNum) {
 		this.contactNum = contactNum;
+	}
+	public int getRancherId() {
+		return rancherId;
+	}
+	public void setRancherId(int rancherId) {
+		this.rancherId = rancherId;
 	}
        
 }

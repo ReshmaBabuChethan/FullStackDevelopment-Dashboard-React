@@ -33,19 +33,22 @@ public class Lot {
 	  @Column(name="femaleCount")
 	    private String femaleCount;
 
+	  @Column(name="rid")
+	    private int rancherId;
 
 	//constructors
    public Lot() {
     	   
        }
        
-	public Lot(String lotID, String shipDate, String totalCount, String maleCount, String femaleCount) {
+	public Lot(String lotID, String shipDate, String totalCount, String maleCount, String femaleCount, int rancherId) {
 		super();
 		this.lotID = lotID;
 		this.shipDate = shipDate;
 		this.totalCount = totalCount;
 		this.maleCount= maleCount;
 		this.femaleCount= femaleCount;
+		this.rancherId=rancherId;
 	}
 	//setters and getters
 	public long getId() {
@@ -86,5 +89,13 @@ public class Lot {
 	public void setFemaleCount(String femaleCount) {
 		this.femaleCount = femaleCount;
 	}
+	
+	public int getRancherId() {
+		return rancherId;
+	}
+	public void setRancherId(int rancherId) {
+		this.rancherId = rancherId;
+	}
+      
        
 }
